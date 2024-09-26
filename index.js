@@ -1,3 +1,20 @@
+
+function newBackground(src, left, bottom, width, height) {
+    let background = document.createElement('div')
+    background.style.position = 'fixed'
+    background.style.left = left + 'px'
+    background.style.bottom = bottom + 'px'
+    background.style.width = width + 'px'
+    background.style.height = height + 'px'
+    background.style.backgroundImage = `url('${src}')`
+    background.style.backgroundSize = 'cover'
+    document.body.append(background)
+}
+
+newBackground('assets/sky.png', 0, window.innerHeight / 2, window.innerWidth, window.innerHeight / 2)
+newBackground('assets/grass.png', 0, 0, window.innerWidth, window.innerHeight / 1.5)
+
+
 const inventory = newInventory()
 move(inventory).to(0, 0)
 
